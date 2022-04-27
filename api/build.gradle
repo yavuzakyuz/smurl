@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1'
+sourceCompatibility = '18'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'redis.clients:jedis:3.2.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.apache.httpcomponents:httpclient'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
