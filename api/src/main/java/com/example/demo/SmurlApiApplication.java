@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import redis.clients.jedis.Jedis;
 
@@ -35,10 +36,21 @@ public class SmurlApiApplication {
 		String stored = jedis.get("somekey");
 		String value = jedis.get("anotherkey");
 		value = value + stored;
-
-		Url output_url = new Url(2, "yavuz", "here");
+		Url output_url = new Url(2, "smurl.com/x2Ad021", "here");
+		jedis.set(output_url.getOriginal(), output_url.getHashed());
 		return output_url;
 	}
+
+	@CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/urlhash")
+	@ResponseBody
+		public Url postBody(@RequestBody String original_url) {
+			System.out.println(original_url);
+			Url output_url = new Url(2, original_url, "somehash for " + original_url);
+			return output_url;
+		}
+
+
 	
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SmurlApiApplication.class, args);
