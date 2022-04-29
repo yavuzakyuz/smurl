@@ -1,5 +1,5 @@
-A simple url shortener application, built with SSR(Svelte - Spring - Redis) stack
-Currently in development
+A simple url shortener application, built with SSR(Svelte - Spring - Redis) stack.
+currently in development
 
 TODO's: 
 
