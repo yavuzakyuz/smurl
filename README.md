@@ -5,7 +5,7 @@ TODO's:
 - Docker compose for simultaneous starting and port config. 
 - Hashing algorithm 
 - Query redis, and de-hash
-- Acutal routing of links
+- Acutal routing of links (run reverse proxy behind server?)
 - Update docker gradle wrapper
 
 
