@@ -16,6 +16,7 @@ import redis.clients.jedis.Jedis;
 @RestController
 public class SmurlApiApplication {
 
+
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping("/")
 	public String home() {
@@ -46,7 +47,8 @@ public class SmurlApiApplication {
 	@ResponseBody
 		public Url postBody(@RequestBody String original_url) {
 			System.out.println(original_url);
-			Url output_url = new Url(2, original_url, "somehash for " + original_url);
+			Url output_url = new Url(2, original_url, "hash_generate_error");
+			Hasher.getInstance().FastQueryHash(output_url);
 			return output_url;
 		}
 

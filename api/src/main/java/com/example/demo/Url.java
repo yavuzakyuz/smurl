@@ -25,7 +25,9 @@ public class Url {
         return this.original;
     }
 
-
+    public void setHashed(String hashed){
+        this.hashed = hashed;
+    }
 
 
 
