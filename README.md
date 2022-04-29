@@ -4,8 +4,9 @@ currently in development
 TODO's: 
 - Docker compose for simultaneous starting and port config. 
 - Hashing algorithm 
-- Query Redis, and de-hash
+- Query redis, and de-hash
 - Acutal routing of links
+- Update docker gradle wrapper
 
 
 
