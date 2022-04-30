@@ -3,11 +3,12 @@ currently in development
 
 TODO's: 
 - Docker compose for simultaneous starting and port config. 
-- Hashing algorithm 
+- ~~Hashing algorithm~~
 - Query redis, and de-hash
-- Acutal routing of links (run reverse proxy behind server?)
+- Acutal routing of links -> sveltekit advanced routing
 - Update docker gradle wrapper
 
 
 
-![smurlexp1-exif-remove](https://user-images.githubusercontent.com/56271907/165938864-295c8173-3452-4fa7-95e9-16a966d85870.png)
+
+![smurl30april](https://user-images.githubusercontent.com/56271907/166104327-cc6de8c2-a4e5-48a8-bc23-da593b6971d1.png)
