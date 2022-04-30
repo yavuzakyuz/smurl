@@ -1,13 +1,13 @@
 package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import redis.clients.jedis.Jedis;
 
@@ -15,7 +15,9 @@ import redis.clients.jedis.Jedis;
 @SpringBootApplication
 @RestController
 public class SmurlApiApplication {
-
+	
+	// Redis connection:
+	Jedis jedis = new Jedis("127.0.0.1", 6379);
 
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping("/")
@@ -48,7 +50,8 @@ public class SmurlApiApplication {
 		public Url postBody(@RequestBody String original_url) {
 			System.out.println(original_url);
 			Url output_url = new Url(2, original_url, "hash_generate_error");
-			Hasher.getInstance().FastQueryHash(output_url);
+			String generated_hash = Hasher.getInstance().FastQueryHash(output_url);
+			jedis.set(generated_hash, original_url);
 			return output_url;
 		}
 
@@ -57,6 +60,4 @@ public class SmurlApiApplication {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SmurlApiApplication.class, args);
 	}
-
-  
 }

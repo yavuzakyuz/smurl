@@ -5,8 +5,8 @@ import java.security.SecureRandom;
 
 public class Hasher {
 
-    static final String hashSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    static SecureRandom random = new SecureRandom();
+    private static final String hashSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    private static SecureRandom random = new SecureRandom();
     private static Hasher instance = new Hasher();
 
     private Hasher(){}
@@ -15,12 +15,13 @@ public class Hasher {
         return instance;
     }
 
-
-    public void FastQueryHash(Url url_obj){
+    // Returns the Hash value: exmp: x5e7A 
+    public String FastQueryHash(Url url_obj){
         String random_hashed = null;
         /* hash function implementation */ 
         random_hashed = randomStringGenerator();
         url_obj.setHashed(smurlSmacker(random_hashed));
+        return random_hashed;
     }
 
     private String randomStringGenerator(){
