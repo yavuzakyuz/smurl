@@ -4,7 +4,7 @@ currently in development
 TODO's: 
 - Docker compose for simultaneous starting and port config. 
 - ~~Hashing algorithm~~
-- Query redis, and de-hash
+- ~~Query redis, and de-hash~~
 - Acutal routing of links -> sveltekit advanced routing
 - Update docker gradle wrapper
 
