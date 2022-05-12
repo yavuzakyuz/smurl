@@ -6,7 +6,7 @@ TODO's:
 - ~~Hashing algorithm~~
 - ~~Query redis, and de-hash~~
 - Acutal routing of links -> sveltekit advanced routing
-- Update docker gradle wrapper
+- Update gradle wrapper in dockerfile
 
 
 
